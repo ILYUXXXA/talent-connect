@@ -142,3 +142,67 @@
     color: var(--color-foreground);
   }
 }
+
+/* site-import tokens: begin (generated; re-import replaces this block) */
+/* Imported clone roles use prefixed Tailwind utilities
+   (bg-site-import-primary, text-site-import-foreground, …); edit the
+   --site-import-* variables to restyle the clone. Unprefixed roles theme new UI. */
+:root {
+  --background: oklch(0.97691 0.01086 274.9);
+  --site-import-background: oklch(0.97691 0.01086 274.9);
+  --foreground: oklch(0.27491 0.05822 261.47);
+  --site-import-foreground: oklch(0.27491 0.05822 261.47);
+  --primary: oklch(0.51674 0.22801 265.6);
+  --site-import-primary: oklch(0.51674 0.22801 265.6);
+  --primary-foreground: oklch(0.985 0 0);
+  --site-import-primary-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.5331 0.22656 266.53);
+  --site-import-accent: oklch(0.5331 0.22656 266.53);
+  --border: oklch(0.94145 0.01496 260.73);
+  --site-import-border: oklch(0.94145 0.01496 260.73);
+  --card: oklch(1 0 0 / 0.22);
+  --site-import-card: oklch(1 0 0 / 0.22);
+  --muted-foreground: oklch(0.61389 0.04002 261.22);
+  --site-import-muted-foreground: oklch(0.61389 0.04002 261.22);
+  --muted: oklch(0.93285 0.0204 264.47);
+  --site-import-muted: oklch(0.93285 0.0204 264.47);
+}
+/* Design tokens captured from the imported site, registered as Tailwind
+   utilities (bg-<name>, text-<name>, font-<name>). var() values live in
+   the imported stylesheet's :root. */
+@theme inline {
+  --font-sans: Manrope, sans-serif;
+  --font-heading: Unbounded, sans-serif;
+  --color-site-import-background: var(--site-import-background);
+  --color-site-import-foreground: var(--site-import-foreground);
+  --color-site-import-primary: var(--site-import-primary);
+  --color-site-import-primary-foreground: var(--site-import-primary-foreground);
+  --color-site-import-accent: var(--site-import-accent);
+  --color-site-import-border: var(--site-import-border);
+  --color-site-import-card: var(--site-import-card);
+  --color-site-import-muted-foreground: var(--site-import-muted-foreground);
+  --color-site-import-muted: var(--site-import-muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-bg: var(--bg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-dim: var(--dim);
+  --color-ink: var(--ink);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-surface: var(--surface);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+}
+@theme reference {
+  --font-body: "Manrope", sans-serif;
+  --font-display: "Unbounded", sans-serif;
+  --radius-sm: 13px;
+  --shadow-hover: 0 22px 52px #2242851f;
+}
+/* site-import tokens: end */
