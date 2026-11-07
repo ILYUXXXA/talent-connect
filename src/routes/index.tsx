@@ -9,10 +9,10 @@ import teamPhoto from "../assets/talenthub-team.jpg";
 
 const originalAuth = "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/auth";
 const audiences = [
-  { title: "Учащимся", role: "student", icon: GraduationCap, headline: "Твой интерес.\nТвой следующий шаг.", description: "Находите интересные события, участвуйте и сохраняйте свои результаты.", tags: ["Мероприятия", "Олимпиады", "Портфолио"] },
+  { title: "Родителям", role: "parent", icon: Heart, headline: "Рядом на каждом\nэтапе развития.", description: "Следите за образовательной активностью и успехами ребёнка.", tags: ["Активность", "Результаты", "Развитие"] },
   { title: "Школам", role: "school", icon: School, headline: "Возможности\nдля всей школы.", description: "Публикуйте возможности, работайте с заявками и находите партнёров.", tags: ["Публикации", "Заявки", "Сотрудничество"] },
   { title: "Компаниям", role: "company", icon: Building2, headline: "Инициативы,\nкоторые объединяют.", description: "Предлагайте инициативы и сотрудничайте с образовательными учреждениями.", tags: ["Проекты", "Партнёрства", "Образование"] },
-  { title: "Родителям", role: "parent", icon: Heart, headline: "Рядом на каждом\nэтапе развития.", description: "Следите за образовательной активностью и успехами ребёнка.", tags: ["Активность", "Результаты", "Развитие"] },
+  { title: "Учащимся", role: "student", icon: GraduationCap, headline: "Твой интерес.\nТвой следующий шаг.", description: "Находите интересные события, участвуйте и сохраняйте свои результаты.", tags: ["Мероприятия", "Олимпиады", "Портфолио"] },
 ];
 const steps = [
   { title: "Находи", subtitle: "Возможности рядом", icon: Compass, copy: "Мероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.", detail: "От первого интереса — к своему направлению." },
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 function Index() {
-  const [audience, setAudience] = useState(0);
+  const [audience, setAudience] = useState(3);
   const [menu, setMenu] = useState(false);
   const [join, setJoin] = useState(false);
   const root = useRef<HTMLElement>(null);
