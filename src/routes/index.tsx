@@ -45,8 +45,9 @@ function Index() {
     elements?.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+  if (!person) return null;
   return <>
-    <style>{capturedCSS}</style>
+    <style>{`@layer imported-inline { ${capturedCSS} }`}</style>
     <main className="kt" ref={root}>
       <header className="kt-header">
         <a href="/" className="kt-logo" aria-label="TalentHub — главная"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a>
