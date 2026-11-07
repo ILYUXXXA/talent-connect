@@ -58,7 +58,7 @@ function Index() {
       </header>
       <section className="kt-hero">
         <img className="kt-hero-art" src={sculpture} width={1920} height={1024} alt="Синяя скульптура в форме звезды" />
-        <div className="kt-hero-top"><span><span className="kt-live" /> ОБРАЗОВАТЕЛЬНАЯ ЭКОСИСТЕМА</span><span>TALENTHUB / <Asterisk size={16} /></span></div>
+        <div className="kt-hero-top"><span><span className="kt-live" /> ОБРАЗОВАТЕЛЬНАЯ ЭКОСИСТЕМА</span><span><Asterisk size={16} /></span></div>
         <h1><span className="kt-line-one">Твои возможности</span><span className="kt-line-two">В одном месте <ArrowUpRight aria-hidden="true" /></span></h1>
         <div className="kt-hero-bottom"><div><p>TalentHub — это образовательная экосистема, которая объединяет школьников, родителей, школы, компании и образовательные организации вокруг развития талантов, образовательных возможностей и достижений.</p><div className="kt-hero-actions"><Button className="kt-cta" onClick={() => setJoin(true)}>Открыть TalentHub <ArrowUpRight /></Button><Button asChild variant="ghost" className="kt-scroll"><a href="#platform">Об экосистеме <ArrowDown /></a></Button></div></div><span className="kt-art-caption">У каждого таланта<br />есть точка старта. <MoveUpRight /></span></div>
         <div className="kt-hero-footer"><span>ЛЮДИ / ИДЕИ / ВОЗМОЖНОСТИ</span><a href="#platform" aria-label="Перейти к экосистеме"><ArrowDown /></a><span>ТВОЙ СЛЕДУЮЩИЙ ШАГ ↓</span></div>
