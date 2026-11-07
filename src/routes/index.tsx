@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, ArrowDown, ArrowRight, Plus, Minus, Menu, X, Compass, Trophy, Network, GraduationCap, School, Building2, Heart, Asterisk } from "lucide-react";
+import { ArrowUpRight, ArrowDown, ArrowRight, Menu, X, Compass, Trophy, Network, GraduationCap, School, Building2, Heart, Asterisk } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import capturedCSS from "../styles/site.css?raw";
@@ -32,7 +32,6 @@ export const Route = createFileRoute("/")({
 });
 function Index() {
   const [audience, setAudience] = useState(0);
-  const [step, setStep] = useState<number | null>(0);
   const [menu, setMenu] = useState(false);
   const [join, setJoin] = useState(false);
   const root = useRef<HTMLElement>(null);
@@ -74,7 +73,7 @@ function Index() {
         </div>
       </section>
       <section className="kt-how kt-section" id="how"><div className="kt-section-top kt-reveal"><span>02 / ТВОЙ МАРШРУТ</span><span>ОТ ПЕРВОГО ИНТЕРЕСА ДО РЕЗУЛЬТАТА</span></div><h2 className="kt-reveal">Меньше барьеров.<br /><span>Больше движения.</span></h2>
-        <div className="kt-steps">{steps.map((item, i) => <article key={item.title} className={`kt-step kt-reveal ${step === i ? 'is-open' : ''}`}><Button variant="ghost" className="kt-step-trigger" aria-expanded={step === i} aria-controls={`step-${i}`} onClick={() => setStep(step === i ? null : i)}><span className="kt-step-number">0{i + 1}</span><item.icon /><span className="kt-step-title">{item.title}</span><span className="kt-step-subtitle">{item.subtitle}</span><span className="kt-step-toggle">{step === i ? <Minus /> : <Plus />}</span></Button><div className="kt-step-body" id={`step-${i}`} hidden={step !== i}><p>{item.copy}</p><span>{item.detail}</span></div></article>)}</div>
+        <div className="kt-steps">{steps.map((item, i) => <article key={item.title} className="kt-step kt-reveal"><Button variant="ghost" className="kt-step-trigger" aria-label={`Открыть TalentHub: ${item.title}`} onClick={() => setJoin(true)}><span className="kt-step-number">0{i + 1}</span><item.icon /><span className="kt-step-title">{item.title}</span><span className="kt-step-subtitle">{item.subtitle}</span><span className="kt-step-toggle"><ArrowUpRight /></span></Button><div className="kt-step-body" id={`step-${i}`}><p>{item.copy}</p><span>{item.detail}</span></div></article>)}</div>
       </section>
       <section className="kt-partners kt-section" id="partners"><div className="kt-section-top kt-reveal"><span>03 / СОТРУДНИЧЕСТВО</span><span>ШКОЛЫ × КОМПАНИИ × АКАДЕМИИ</span></div><div className="kt-partners-content kt-reveal"><h2>Вместе —<br /><span>возможнее.</span></h2><div><Network className="kt-network" strokeWidth={1} /><p>Учреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.</p><Button className="kt-cta kt-cta-light" onClick={() => setJoin(true)}>Стать частью TalentHub <ArrowUpRight /></Button></div></div><div className="kt-partner-types kt-reveal"><span><School /> Образовательные учреждения</span><Plus /><span><Building2 /> Компании и академии</span><span className="kt-partner-equals">=</span><span>Новые возможности <ArrowUpRight /></span></div></section>
       <section className="kt-final kt-section"><div className="kt-section-top"><span>СЛЕДУЮЩИЙ ШАГ — ЗА ТОБОЙ</span><Asterisk /></div><Button className="kt-final-link" variant="ghost" onClick={() => setJoin(true)}><span>Начнём<span>с возможности?</span></span><ArrowUpRight /></Button><p>Присоединяйтесь к единой образовательной среде.</p></section>
