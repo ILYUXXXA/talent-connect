@@ -51,7 +51,7 @@ function Index() {
       <header className="kt-header">
         <a href="/" className="kt-logo" aria-label="TalentHub — главная"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a>
         <nav className={menu ? "kt-nav is-open" : "kt-nav"} aria-label="Основная навигация">
-          {[['#platform', 'Экосистема'], ['#how', 'Как это работает'], ['#partners', 'Партнёрства']].map(([href, label]) => <Button asChild variant="ghost" key={href}><a href={href} onClick={() => setMenu(false)}>{label}</a></Button>)}
+          {[['#platform', 'Об экосистеме'], ['#how', 'Как это работает'], ['#partners', 'Партнёрства']].map(([href, label]) => <Button asChild variant="ghost" key={href}><a href={href} onClick={() => setMenu(false)}>{label}</a></Button>)}
         </nav>
         <div className="kt-header-actions"><Button asChild className="kt-login" variant="outline"><a href={originalAuth}>Войти <ArrowRight /></a></Button><Button className="kt-menu" variant="ghost" size="icon" aria-label={menu ? 'Закрыть меню' : 'Открыть меню'} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button></div>
       </header>
