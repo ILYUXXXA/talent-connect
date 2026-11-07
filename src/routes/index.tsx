@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, ArrowDown, ArrowRight, Menu, X, Compass, Trophy, Network, GraduationCap, School, Building2, Heart, Asterisk } from "lucide-react";
+import { ArrowUpRight, ArrowDown, ArrowRight, Plus, Menu, X, Compass, Trophy, Network, GraduationCap, School, Building2, Heart, Asterisk } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import capturedCSS from "../styles/site.css?raw";
