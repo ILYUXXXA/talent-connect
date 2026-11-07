@@ -1,192 +1,85 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, ArrowDown, ArrowRight, Plus, Minus, Menu, X, MoveUpRight, Compass, Trophy, Network, GraduationCap, School, Building2, Heart, Asterisk } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import capturedCSS from "../styles/site.css?raw";
+import sculpture from "../assets/talenthub-sculpture.jpg";
 import teamPhoto from "../assets/talenthub-team.jpg";
 
+const originalAuth = "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/auth";
+const audiences = [
+  { title: "Учащимся", icon: GraduationCap, headline: "Твой интерес.\nТвой следующий шаг.", description: "Находите интересные события, участвуйте и сохраняйте свои результаты.", tags: ["Мероприятия", "Олимпиады", "Портфолио"] },
+  { title: "Школам", icon: School, headline: "Возможности\nдля всей школы.", description: "Публикуйте возможности, работайте с заявками и находите партнёров.", tags: ["Публикации", "Заявки", "Сотрудничество"] },
+  { title: "Компаниям", icon: Building2, headline: "Инициативы,\nкоторые объединяют.", description: "Предлагайте инициативы и сотрудничайте с образовательными учреждениями.", tags: ["Проекты", "Партнёрства", "Образование"] },
+  { title: "Родителям", icon: Heart, headline: "Рядом на каждом\nэтапе развития.", description: "Следите за образовательной активностью и успехами ребёнка.", tags: ["Активность", "Результаты", "Развитие"] },
+];
+const steps = [
+  { title: "Находи", subtitle: "Возможности рядом", icon: Compass, copy: "Мероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.", detail: "От первого интереса — к своему направлению." },
+  { title: "Участвуй", subtitle: "Личное портфолио", icon: Trophy, copy: "Собирайте подтверждённые достижения и отслеживайте свой образовательный путь.", detail: "От заявки — к подтверждённому результату." },
+  { title: "Создавай", subtitle: "Партнёрства", icon: Network, copy: "Находите организации и создавайте совместные образовательные инициативы.", detail: "От знакомства — к общему проекту." },
+];
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "TalentHub — школьные мероприятия" },
-    { name: "description", content: "TalentHub — образовательная экосистема мероприятий, достижений и партнёрств для учащихся, родителей, школ и компаний." },
-    { property: "og:title", content: "TalentHub — школьные мероприятия" },
-    { property: "og:description", content: "Мероприятия, достижения и образовательные партнёрства в одной экосистеме TalentHub." },
-    { property: "og:type", content: "website" },
-    { name: "twitter:card", content: "summary_large_image" },
+    { title: "TalentHub — твои возможности в одном месте" },
+    { name: "description", content: "Образовательная экосистема TalentHub: мероприятия, достижения и партнёрства для учащихся, родителей, школ и компаний." },
+    { property: "og:title", content: "TalentHub — твои возможности в одном месте" },
+    { property: "og:description", content: "Находи. Участвуй. Создавай. Возможности для развития талантов в одной образовательной экосистеме." },
+    { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ] }),
-  staticData: { importedDocument: { html: { "lang": "ru" }, body: {  } } },
+  staticData: { importedDocument: { html: { lang: "ru" } } },
   component: Index,
 });
-
 function Index() {
-  return (
-    <>
-      <style>{capturedCSS}</style>
-      <div id="root">
-        <main className="th-landing th-redesign">
-          <header className="th-header">
-            <div className="th-header-inner">
-              <a className="th-logo" href="/">
-                <span className="th-logo-mark">t.</span>
-                <span>Talent<span>Hub</span></span>
-              </a>
-              <nav className="th-nav">
-                <a  href="#platform">Об экосистеме</a>
-                <a  href="#how">Как это работает</a>
-                <a  href="#partners">Партнёрства</a>
-              </nav>
-              <a className="th-login" href="/auth">Войти <span>→</span></a>
-            </div>
-          </header>
-          <ImportedSection />
-          <section className="th-intro" id="platform">
-            <div className="th-section-label">TALENTHUB / ЭКОСИСТЕМА</div>
-            <div >
-              <h2 >От интереса — к реальным достижениям</h2>
-              <p >Возможности для учащихся и инструменты для организаций собраны в одной экосистеме. Находите события, подавайте заявки, сохраняйте результаты и выстраивайте сотрудничество в единой среде.</p>
-            </div>
-          </section>
-          <ImportedSection2 />
-          <section className="th-partners" id="partners">
-            <div className="th-partners-copy">
-              <div className="th-section-label">СОТРУДНИЧЕСТВО</div>
-              <h2 >Создавайте возможности вместе</h2>
-              <p >Учреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.</p>
-              <a className="th-partner-link" href="/auth">Стать частью TalentHub <span>→</span></a>
-            </div>
-            <div className="th-partner-diagram">
-              <div className="th-partner-card">
-                <span >⌂</span>
-                <b>Образовательные учреждения</b>
-                <small>Школы и организации</small>
-              </div>
-              <div className="th-partner-connector">
-                <span>↔</span>
-              </div>
-              <div className="th-partner-card">
-                <span >▦</span>
-                <b>Компании и академии</b>
-                <small>Партнёры и инициативы</small>
-              </div>
-            </div>
-          </section>
-          <ImportedSectionTalentHub />
-          <section className="th-cta">
-            <div>
-              <div className="th-section-label">TALENTHUB</div>
-              <h2 >Начните открывать новые возможности</h2>
-              <p >Присоединяйтесь к единой образовательной среде.</p>
-            </div>
-            <a className="th-primary" href="/auth">Открыть экосистему <span >→</span></a>
-          </section>
-          <footer className="th-footer">
-            <a className="th-logo" href="/">
-              <span className="th-logo-mark">t.</span>
-              <span>Talent<span>Hub</span></span>
-            </a>
-            <span >Образовательная экосистема возможностей и партнёрств</span>
-            <small >© TalentHub</small>
-          </footer>
-        </main>
-      </div>
-      <div  />
-    </>
-  );
-}
-
-function ImportedSection() {
-  return (
-    <>
-      <section className="th-editorial-hero">
-        <img className="th-hero-photo" src={teamPhoto} alt="Учащиеся вместе работают над технологическим проектом" width={1920} height={1024} />
-        <div className="th-editorial-inner">
-          <div className="th-overline"><span /> ОБРАЗОВАТЕЛЬНАЯ ЭКОСИСТЕМА</div>
-          <div className="th-hero-brand">Talent<span>Hub</span> /</div>
-          <h1>Твои возможности<br /><em>В одном месте</em></h1>
-          <p>TalentHub — это образовательная экосистема, которая объединяет школьников, родителей, школы, компании и образовательные организации вокруг развития талантов, образовательных возможностей и достижений.</p>
-          <div className="th-hero-actions">
-            <a className="th-primary" href="/auth">Открыть TalentHub <span>→</span></a>
-            <a className="th-secondary" href="#platform">Узнать об экосистеме ↓</a>
-          </div>
-        </div>
-        <span className="th-photo-caption">Мероприятия. Люди. Достижения.</span>
+  const [audience, setAudience] = useState(0);
+  const [step, setStep] = useState<number | null>(0);
+  const [menu, setMenu] = useState(false);
+  const [join, setJoin] = useState(false);
+  const root = useRef<HTMLElement>(null);
+  const person = audiences[audience];
+  useEffect(() => {
+    const elements = root.current?.querySelectorAll(".kt-reveal");
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+    }), { threshold: 0.12 });
+    elements?.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+  if (!person) return null;
+  return <>
+    <style>{`@layer imported-inline { ${capturedCSS} }`}</style>
+    <main className="kt" ref={root}>
+      <header className="kt-header">
+        <a href="/" className="kt-logo" aria-label="TalentHub — главная"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a>
+        <nav className={menu ? "kt-nav is-open" : "kt-nav"} aria-label="Основная навигация">
+          {[['#platform', 'Экосистема'], ['#how', 'Как это работает'], ['#partners', 'Партнёрства']].map(([href, label]) => <Button asChild variant="ghost" key={href}><a href={href} onClick={() => setMenu(false)}>{label}</a></Button>)}
+        </nav>
+        <div className="kt-header-actions"><Button asChild className="kt-login" variant="outline"><a href={originalAuth}>Войти <ArrowRight /></a></Button><Button className="kt-menu" variant="ghost" size="icon" aria-label={menu ? 'Закрыть меню' : 'Открыть меню'} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button></div>
+      </header>
+      <section className="kt-hero">
+        <img className="kt-hero-art" src={sculpture} width={1920} height={1024} alt="Синяя скульптура в форме звезды" />
+        <div className="kt-hero-top"><span><span className="kt-live" /> ОБРАЗОВАТЕЛЬНАЯ ЭКОСИСТЕМА</span><span>TALENTHUB / <Asterisk size={16} /></span></div>
+        <h1><span className="kt-line-one">Твои возможности</span><span className="kt-line-two">В одном месте <ArrowUpRight aria-hidden="true" /></span></h1>
+        <div className="kt-hero-bottom"><div><p>TalentHub — это образовательная экосистема, которая объединяет школьников, родителей, школы, компании и образовательные организации вокруг развития талантов, образовательных возможностей и достижений.</p><div className="kt-hero-actions"><Button className="kt-cta" onClick={() => setJoin(true)}>Открыть TalentHub <ArrowUpRight /></Button><Button asChild variant="ghost" className="kt-scroll"><a href="#platform">Об экосистеме <ArrowDown /></a></Button></div></div><span className="kt-art-caption">У каждого таланта<br />есть точка старта. <MoveUpRight /></span></div>
+        <div className="kt-hero-footer"><span>ЛЮДИ / ИДЕИ / ВОЗМОЖНОСТИ</span><a href="#platform" aria-label="Перейти к экосистеме"><ArrowDown /></a><span>ТВОЙ СЛЕДУЮЩИЙ ШАГ ↓</span></div>
       </section>
-      <div className="th-editorial-points">
-        <div><span>01 /</span><b>Находи</b><small>Мероприятия и проекты</small><i>↗</i></div>
-        <div><span>02 /</span><b>Участвуй</b><small>Заявки и достижения</small><i>↗</i></div>
-        <div><span>03 /</span><b>Создавай</b><small>Партнёрства и инициативы</small><i>↗</i></div>
-      </div>
-    </>
-  );
-}
-
-function ImportedSection2() {
-  return (
-    <section className="th-features" id="how">
-      <div className="th-section-heading">
-        <div>
-          <div className="th-section-label">ВОЗМОЖНОСТИ</div>
-          <h2 >Всё необходимое<br />для следующего шага</h2>
+      <div className="kt-ticker" aria-hidden="true"><div>{Array.from({ length: 4 }, (_, i) => <span key={i}>НАХОДИ <Asterisk /> УЧАСТВУЙ <Asterisk /> СОЗДАВАЙ <Asterisk /></span>)}</div></div>
+      <section className="kt-platform kt-section" id="platform">
+        <div className="kt-section-top kt-reveal"><span>01 / ЭКОСИСТЕМА</span><span>РАЗНЫЕ РОЛИ. ОБЩИЕ ВОЗМОЖНОСТИ.</span></div>
+        <h2 className="kt-reveal">Не просто платформа.<br /><span>Точка пересечения.</span></h2>
+        <div className="kt-audiences kt-reveal" role="tablist" aria-label="Участники экосистемы">{audiences.map((item, i) => <Button key={item.title} role="tab" aria-selected={audience === i} aria-controls="audience-panel" id={`audience-${i}`} variant="ghost" className={audience === i ? 'is-active' : ''} onClick={() => setAudience(i)}><item.icon />{item.title}<ArrowUpRight /></Button>)}</div>
+        <div className="kt-audience-content" role="tabpanel" id="audience-panel" aria-labelledby={`audience-${audience}`}>
+          <div key={audience} className="kt-audience-copy"><span className="kt-mini">TALENTHUB / {person.title.toUpperCase()}</span><h3>{person.headline}</h3><p>{person.description}</p><div className="kt-tags">{person.tags.map(tag => <span key={tag}>{tag}</span>)}</div><Button onClick={() => setJoin(true)} variant="ghost" className="kt-text-link">Открыть экосистему <ArrowUpRight /></Button></div>
+          <div className="kt-audience-image"><img src={teamPhoto} width={1920} height={1024} loading="lazy" alt="Учащиеся работают над совместным проектом" /><span>ОТ ИНТЕРЕСА — К РЕАЛЬНЫМ ДОСТИЖЕНИЯМ <ArrowUpRight /></span></div>
         </div>
-        <p >От первого интереса до участия и подтверждённого результата.</p>
-      </div>
-      <div className="th-feature-grid">
-        <article className="th-feature">
-          <span className="th-feature-icon">⌕</span>
-          <small >01</small>
-          <h3>Возможности рядом</h3>
-          <p >Мероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.</p>
-        </article>
-        <article className="th-feature">
-          <span className="th-feature-icon">▤</span>
-          <small >02</small>
-          <h3>Личное портфолио</h3>
-          <p >Собирайте подтверждённые достижения и отслеживайте свой образовательный путь.</p>
-        </article>
-        <article className="th-feature">
-          <span className="th-feature-icon">↔</span>
-          <small >03</small>
-          <h3>Партнёрства</h3>
-          <p >Находите организации и создавайте совместные образовательные инициативы.</p>
-        </article>
-      </div>
-    </section>
-  );
-}
-
-function ImportedSectionTalentHub() {
-  return (
-    <section className="th-roles">
-      <div className="th-section-heading">
-        <div>
-          <div className="th-section-label">ДЛЯ КАЖДОГО УЧАСТНИКА</div>
-          <h2 >TalentHub объединяет</h2>
-        </div>
-        <p >У каждого участника — своя роль и понятные инструменты.</p>
-      </div>
-      <div className="th-role-grid">
-        <article className="th-role">
-          <span >01</span>
-          <h3>Учащимся</h3>
-          <p >Находите интересные события, участвуйте и сохраняйте свои результаты.</p>
-          <a  href="/auth">Открыть экосистему <b >→</b></a>
-        </article>
-        <article className="th-role">
-          <span >02</span>
-          <h3>Школам и учреждениям</h3>
-          <p >Публикуйте возможности, работайте с заявками и находите партнёров.</p>
-          <a  href="/school">Подробнее <b >→</b></a>
-        </article>
-        <article className="th-role">
-          <span >03</span>
-          <h3>Компаниям и академиям</h3>
-          <p >Предлагайте инициативы и сотрудничайте с образовательными учреждениями.</p>
-          <a  href="/company">Подробнее <b >→</b></a>
-        </article>
-        <article className="th-role">
-          <span >04</span>
-          <h3>Родителям</h3>
-          <p >Следите за образовательной активностью и успехами ребёнка.</p>
-          <a  href="/parent">Подробнее <b >→</b></a>
-        </article>
-      </div>
-    </section>
-  );
+      </section>
+      <section className="kt-how kt-section" id="how"><div className="kt-section-top kt-reveal"><span>02 / ТВОЙ МАРШРУТ</span><span>ОТ ПЕРВОГО ИНТЕРЕСА ДО РЕЗУЛЬТАТА</span></div><h2 className="kt-reveal">Меньше барьеров.<br /><span>Больше движения.</span></h2>
+        <div className="kt-steps">{steps.map((item, i) => <article key={item.title} className={`kt-step kt-reveal ${step === i ? 'is-open' : ''}`}><Button variant="ghost" className="kt-step-trigger" aria-expanded={step === i} aria-controls={`step-${i}`} onClick={() => setStep(step === i ? null : i)}><span className="kt-step-number">0{i + 1}</span><item.icon /><span className="kt-step-title">{item.title}</span><span className="kt-step-subtitle">{item.subtitle}</span><span className="kt-step-toggle">{step === i ? <Minus /> : <Plus />}</span></Button><div className="kt-step-body" id={`step-${i}`} hidden={step !== i}><p>{item.copy}</p><span>{item.detail}</span></div></article>)}</div>
+      </section>
+      <section className="kt-partners kt-section" id="partners"><div className="kt-section-top kt-reveal"><span>03 / СОТРУДНИЧЕСТВО</span><span>ШКОЛЫ × КОМПАНИИ × АКАДЕМИИ</span></div><div className="kt-partners-content kt-reveal"><h2>Вместе —<br /><span>возможнее.</span></h2><div><Network className="kt-network" strokeWidth={1} /><p>Учреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.</p><Button className="kt-cta kt-cta-light" onClick={() => setJoin(true)}>Стать частью TalentHub <ArrowUpRight /></Button></div></div><div className="kt-partner-types kt-reveal"><span><School /> Образовательные учреждения</span><Plus /><span><Building2 /> Компании и академии</span><span className="kt-partner-equals">=</span><span>Новые возможности <ArrowUpRight /></span></div></section>
+      <section className="kt-final kt-section"><div className="kt-section-top"><span>СЛЕДУЮЩИЙ ШАГ — ЗА ТОБОЙ</span><Asterisk /></div><Button className="kt-final-link" variant="ghost" onClick={() => setJoin(true)}><span>Начнём<span>с возможности?</span></span><ArrowUpRight /></Button><p>Присоединяйтесь к единой образовательной среде.</p></section>
+      <footer className="kt-footer"><a href="/" className="kt-logo"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a><span>Образовательная экосистема возможностей и партнёрств</span><span>© TalentHub</span><Button asChild size="icon" variant="ghost"><a href="#" aria-label="Наверх"><ArrowUpRight /></a></Button></footer>
+    </main>
+    <Dialog open={join} onOpenChange={setJoin}><DialogContent className="kt-join"><DialogTitle>Твоя точка старта</DialogTitle><DialogDescription>TalentHub объединяет</DialogDescription><div className="kt-join-roles">{audiences.map(item => <Button key={item.title} asChild variant="outline"><a href={originalAuth}><item.icon />{item.title}<ArrowUpRight /></a></Button>)}</div></DialogContent></Dialog>
+  </>;
 }

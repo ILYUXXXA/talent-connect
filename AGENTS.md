@@ -30,3 +30,4 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Keep imported TalentHub markup and interaction handlers in their route files, preserving the captured stylesheet and local assets to retain source fidelity.
+- Keep landing interaction state in the index route and use a separately scoped kinetic design in global CSS so the captured source stylesheet stays intact.

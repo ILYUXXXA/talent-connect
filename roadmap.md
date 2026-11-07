@@ -1,4 +1,4 @@
 # Landing redesign
-- [x] Redesign TalentHub using the reference as nonliteral inspiration.
-- [x] Preserve white/blue palette, core copy, font, logo and Войти button.
-- [x] Verify sections and navigation on desktop and phone.
+- [x] Replace rejected design with a kinetic, reference-inspired layout and new icons.
+- [x] Preserve the requested headline and paragraph; add real section interactions and motion.
+- [x] Verify desktop, phone, navigation and interactive sections.
