@@ -9,10 +9,10 @@ import teamPhoto from "../assets/talenthub-team.jpg";
 
 const originalAuth = "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/auth";
 const audiences = [
-  { title: "Учащимся", icon: GraduationCap, headline: "Твой интерес.\nТвой следующий шаг.", description: "Находите интересные события, участвуйте и сохраняйте свои результаты.", tags: ["Мероприятия", "Олимпиады", "Портфолио"] },
-  { title: "Школам", icon: School, headline: "Возможности\nдля всей школы.", description: "Публикуйте возможности, работайте с заявками и находите партнёров.", tags: ["Публикации", "Заявки", "Сотрудничество"] },
-  { title: "Компаниям", icon: Building2, headline: "Инициативы,\nкоторые объединяют.", description: "Предлагайте инициативы и сотрудничайте с образовательными учреждениями.", tags: ["Проекты", "Партнёрства", "Образование"] },
-  { title: "Родителям", icon: Heart, headline: "Рядом на каждом\nэтапе развития.", description: "Следите за образовательной активностью и успехами ребёнка.", tags: ["Активность", "Результаты", "Развитие"] },
+  { title: "Учащимся", role: "student", icon: GraduationCap, headline: "Твой интерес.\nТвой следующий шаг.", description: "Находите интересные события, участвуйте и сохраняйте свои результаты.", tags: ["Мероприятия", "Олимпиады", "Портфолио"] },
+  { title: "Школам", role: "school", icon: School, headline: "Возможности\nдля всей школы.", description: "Публикуйте возможности, работайте с заявками и находите партнёров.", tags: ["Публикации", "Заявки", "Сотрудничество"] },
+  { title: "Компаниям", role: "company", icon: Building2, headline: "Инициативы,\nкоторые объединяют.", description: "Предлагайте инициативы и сотрудничайте с образовательными учреждениями.", tags: ["Проекты", "Партнёрства", "Образование"] },
+  { title: "Родителям", role: "parent", icon: Heart, headline: "Рядом на каждом\nэтапе развития.", description: "Следите за образовательной активностью и успехами ребёнка.", tags: ["Активность", "Результаты", "Развитие"] },
 ];
 const steps = [
   { title: "Находи", subtitle: "Возможности рядом", icon: Compass, copy: "Мероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.", detail: "От первого интереса — к своему направлению." },
@@ -48,7 +48,7 @@ function Index() {
   if (!person) return null;
   return <>
     <style>{`@layer imported-inline { ${capturedCSS} }`}</style>
-    <main className="kt" ref={root}>
+    <main id="top" className="kt" ref={root}>
       <header className="kt-header">
         <a href="/" className="kt-logo" aria-label="TalentHub — главная"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a>
         <nav className={menu ? "kt-nav is-open" : "kt-nav"} aria-label="Основная навигация">
@@ -78,8 +78,8 @@ function Index() {
       </section>
       <section className="kt-partners kt-section" id="partners"><div className="kt-section-top kt-reveal"><span>03 / СОТРУДНИЧЕСТВО</span><span>ШКОЛЫ × КОМПАНИИ × АКАДЕМИИ</span></div><div className="kt-partners-content kt-reveal"><h2>Вместе —<br /><span>возможнее.</span></h2><div><Network className="kt-network" strokeWidth={1} /><p>Учреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.</p><Button className="kt-cta kt-cta-light" onClick={() => setJoin(true)}>Стать частью TalentHub <ArrowUpRight /></Button></div></div><div className="kt-partner-types kt-reveal"><span><School /> Образовательные учреждения</span><Plus /><span><Building2 /> Компании и академии</span><span className="kt-partner-equals">=</span><span>Новые возможности <ArrowUpRight /></span></div></section>
       <section className="kt-final kt-section"><div className="kt-section-top"><span>СЛЕДУЮЩИЙ ШАГ — ЗА ТОБОЙ</span><Asterisk /></div><Button className="kt-final-link" variant="ghost" onClick={() => setJoin(true)}><span>Начнём<span>с возможности?</span></span><ArrowUpRight /></Button><p>Присоединяйтесь к единой образовательной среде.</p></section>
-      <footer className="kt-footer"><a href="/" className="kt-logo"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a><span>Образовательная экосистема возможностей и партнёрств</span><span>© TalentHub</span><Button asChild size="icon" variant="ghost"><a href="#" aria-label="Наверх"><ArrowUpRight /></a></Button></footer>
+      <footer className="kt-footer"><a href="/" className="kt-logo"><span className="kt-logo-mark">t.</span><span>Talent<span>Hub</span></span></a><span>Образовательная экосистема возможностей и партнёрств</span><span>© TalentHub</span><Button asChild size="icon" variant="ghost"><a href="#top" aria-label="Вернуться наверх"><ArrowUpRight /></a></Button></footer>
     </main>
-    <Dialog open={join} onOpenChange={setJoin}><DialogContent className="kt-join"><DialogTitle>Твоя точка старта</DialogTitle><DialogDescription>TalentHub объединяет</DialogDescription><div className="kt-join-roles">{audiences.map(item => <Button key={item.title} asChild variant="outline"><a href={originalAuth}><item.icon />{item.title}<ArrowUpRight /></a></Button>)}</div></DialogContent></Dialog>
+    <Dialog open={join} onOpenChange={setJoin}><DialogContent className="kt-join"><DialogTitle>С чего начнём?</DialogTitle><DialogDescription>Выберите, как вы хотите использовать TalentHub. Дальше откроется единая форма входа и регистрации.</DialogDescription><div className="kt-join-roles">{audiences.map(item => <Button key={item.title} asChild variant="outline"><a href={`${originalAuth}?role=${item.role}`} aria-label={`Продолжить как: ${item.title}`}><item.icon />{item.title}<ArrowUpRight /></a></Button>)}</div></DialogContent></Dialog>
   </>;
 }
