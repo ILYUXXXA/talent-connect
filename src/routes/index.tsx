@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/site.css?raw";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "TalentHub — школьные мероприятия" }] }),
+  head: () => ({ meta: [
+    { title: "TalentHub — школьные мероприятия" },
+    { name: "description", content: "TalentHub — образовательная экосистема мероприятий, достижений и партнёрств для учащихся, родителей, школ и компаний." },
+    { property: "og:title", content: "TalentHub — школьные мероприятия" },
+    { property: "og:description", content: "Мероприятия, достижения и образовательные партнёрства в одной экосистеме TalentHub." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
   staticData: { importedDocument: { html: { "lang": "ru" }, body: {  } } },
   component: Index,
 });
