@@ -508,3 +508,64 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 }
 @media (max-width:370px) { .kt h1 { font-size: 25px; } .kt .kt-final-link { font-size: 25px; } .kt h2 { font-size: 22px; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } .kt *, .kt *::before, .kt *::after { animation: none !important; transition: none !important; } .kt-reveal { opacity: 1; transform: none; } }
+
+/* Consistent, carefully rounded controls across the TalentHub landing page. */
+.kt .kt-login,
+.kt .kt-cta,
+.kt .kt-menu,
+.kt .kt-join-roles a {
+  border-radius: 12px;
+}
+
+.kt .kt-audiences button {
+  border-radius: 12px;
+  border-bottom-width: 0;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.kt .kt-audiences button:hover {
+  transform: translateY(-1px);
+}
+
+.kt .kt-step-trigger {
+  border-radius: 14px;
+  padding-inline: 16px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.kt .kt-step-trigger:hover {
+  background: var(--kinetic-paper);
+}
+
+.kt .kt-scroll,
+.kt .kt-text-link {
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+
+.kt .kt-final-link {
+  border-radius: 16px;
+  padding: 28px 24px 18px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.kt .kt-final-link:hover {
+  background: var(--kinetic-paper);
+}
+
+.kt button:focus-visible,
+.kt a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--kinetic-blue) 55%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .kt .kt-final-link {
+    border-radius: 12px;
+    padding: 18px 14px 12px;
+  }
+  .kt .kt-step-trigger {
+    padding-inline: 10px;
+  }
+}
+
