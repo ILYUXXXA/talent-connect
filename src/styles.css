@@ -360,7 +360,7 @@
   --kinetic-inverse: oklch(1 0 0);
   --kinetic-dark-line: oklch(0.34 0 0);
 }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+html { scroll-behavior: smooth; scroll-padding-top: 0; }
 .kt { background: var(--kinetic-paper); color: var(--kinetic-ink); font-family: Manrope, sans-serif; overflow: clip; }
 .kt *, .kt-join * { letter-spacing: 0; }
 .kt a { text-decoration: none; }
@@ -404,7 +404,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .kt-ticker span { display: flex; align-items: center; gap: 35px; padding-right: 35px; font-family: Unbounded, sans-serif; font-size: 26px; }
 .kt-ticker svg { width: 33px; height: 33px; }
 .kt-ticker:hover > div { animation-play-state: paused; }
-.kt-section { padding: 65px 5% 80px; scroll-margin-top: 20px; }
+.kt-section { padding: 65px 5% 80px; scroll-margin-top: 0; }
 .kt-section-top { padding-bottom: 26px; border-bottom: 1px solid var(--kinetic-line); }
 .kt h2 { font-family: Unbounded, sans-serif; font-size: 44px; font-weight: 500; line-height: 1.35; margin: 48px 0; }
 .kt h2 > span { color: var(--kinetic-blue); }
@@ -483,7 +483,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
  .kt-step-title { font-size: 26px; }
 }
 @media (max-width:700px) {
- html { scroll-padding-top: 25px; }
+ html { scroll-padding-top: 0; }
  .kt-header { padding: 0 20px; height: 70px; } .kt-logo { font-size: 18px; } .kt-logo-mark { width: 34px; height: 34px; font-size: 23px; }
  .kt-menu { display: inline-flex; color: var(--kinetic-ink); } .kt-login { height: 40px; font-size: 13px; gap: 10px; padding-inline: 14px; }
  .kt-nav { display: none; } .kt-nav.is-open { display: flex; position: absolute; top: 70px; left: 0; width: 100%; flex-direction: column; align-items: stretch; background: var(--kinetic-paper); border-bottom: 1px solid var(--kinetic-line); padding: 15px; } .kt-nav a { justify-content: flex-start; height: 50px; font-size: 16px; border-bottom: none; }
