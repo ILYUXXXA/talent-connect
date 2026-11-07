@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep imported TalentHub markup and interaction handlers in their route files, preserving the captured stylesheet and local assets to retain source fidelity.
