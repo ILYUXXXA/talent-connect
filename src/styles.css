@@ -222,7 +222,7 @@
 .th-redesign { background: var(--landing-paper); color: var(--landing-ink); overflow: clip; }
 .th-redesign *, .th-redesign h1, .th-redesign h2 { letter-spacing: 0; }
 .th-redesign .th-header { top: 0; z-index: 40; border-bottom: 1px solid var(--landing-line); }
-.th-redesign .th-header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; height: 100%; }
+.th-redesign .th-header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; height: 100%; margin: 0 auto; }
 .th-redesign .th-logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 850; }
 .th-redesign .th-nav { display: flex; align-items: center; gap: 14px; margin-left: auto; margin-right: 36px; }
 .th-redesign .th-nav a { text-decoration: none; font-weight: 750; }
@@ -347,3 +347,4 @@
   .th-redesign .th-footer > span { order: 3; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .th-editorial-inner { animation: none; } .th-redesign * { scroll-behavior: auto; transition: none; } }
+@media (width <= 360px) { .th-redesign .th-editorial-inner h1 { font-size: 22px; } .th-redesign .th-nav a { font-size: 9px; } }
