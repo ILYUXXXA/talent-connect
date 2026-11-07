@@ -1,0 +1,390 @@
+[
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#platform",
+    "scrollContainer": "document",
+    "scrollPosition": 779,
+    "expected": "platform visible",
+    "observed": "TALENTHUB / ЭКОСИСТЕМА\nОт интереса — к реальным достижениям\n\nВозможности для учащихся и инструменты для организаций собраны в одной экосистеме. Находите события, подавайте заявки, сохраняйте результаты и выстраивайте сотрудничество в единой среде.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-desktop-platform.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#how",
+    "scrollContainer": "document",
+    "scrollPosition": 1095,
+    "expected": "how visible",
+    "observed": "ВОЗМОЖНОСТИ\nВсё необходимое\nдля следующего шага\n\nОт первого интереса до участия и подтверждённого результата.\n\n⌕\n01\nВозможности рядом\n\nМероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.\n\n▤\n02\nЛичное портфолио\n\nСобирайте подтверждённые достижения и отслеживайте свой образовательный путь.\n\n↔\n03\nПартнёрства\n\nНаходите организации и создавайте совместные образовательные инициативы.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-desktop-how.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#partners",
+    "scrollContainer": "document",
+    "scrollPosition": 1299,
+    "expected": "partners visible",
+    "observed": "СОТРУДНИЧЕСТВО\nСоздавайте возможности вместе\n\nУчреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.\n\nСтать частью TalentHub\n→\n⌂\nОбразовательные учреждения\nШколы и организации\n↔\n▦\nКомпании и академии\nПартнёры и инициативы",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-desktop-partners.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/auth",
+    "expected": "same-origin /auth",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/auth",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/school",
+    "expected": "same-origin /school",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/school",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/company",
+    "expected": "same-origin /company",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/company",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/parent",
+    "expected": "same-origin /parent",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/parent",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#platform",
+    "scrollContainer": "document",
+    "scrollPosition": 737,
+    "expected": "platform visible",
+    "observed": "TALENTHUB / ЭКОСИСТЕМА\nОт интереса — к реальным достижениям\n\nВозможности для учащихся и инструменты для организаций собраны в одной экосистеме. Находите события, подавайте заявки, сохраняйте результаты и выстраивайте сотрудничество в единой среде.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-phone-platform.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#how",
+    "scrollContainer": "document",
+    "scrollPosition": 1053,
+    "expected": "how visible",
+    "observed": "ВОЗМОЖНОСТИ\nВсё необходимое\nдля следующего шага\n\nОт первого интереса до участия и подтверждённого результата.\n\n⌕\n01\nВозможности рядом\n\nМероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.\n\n▤\n02\nЛичное портфолио\n\nСобирайте подтверждённые достижения и отслеживайте свой образовательный путь.\n\n↔\n03\nПартнёрства\n\nНаходите организации и создавайте совместные образовательные инициативы.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-phone-how.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#partners",
+    "scrollContainer": "document",
+    "scrollPosition": 2026,
+    "expected": "partners visible",
+    "observed": "СОТРУДНИЧЕСТВО\nСоздавайте возможности вместе\n\nУчреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.\n\nСтать частью TalentHub\n→\n⌂\nОбразовательные учреждения\nШколы и организации\n↔\n▦\nКомпании и академии\nПартнёры и инициативы",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/source-phone-partners.png"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/auth",
+    "expected": "same-origin /auth",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/auth",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/school",
+    "expected": "same-origin /school",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/school",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/company",
+    "expected": "same-origin /company",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/company",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "source",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/parent",
+    "expected": "same-origin /parent",
+    "observed": "https://talenthub-frontend-js2wgv54f-hack-lbsu.vercel.app/parent",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#platform",
+    "scrollContainer": "document",
+    "scrollPosition": 782,
+    "expected": "platform visible",
+    "observed": "TALENTHUB / ЭКОСИСТЕМА\nОт интереса — к реальным достижениям\n\nВозможности для учащихся и инструменты для организаций собраны в одной экосистеме. Находите события, подавайте заявки, сохраняйте результаты и выстраивайте сотрудничество в единой среде.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-desktop-platform.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#how",
+    "scrollContainer": "document",
+    "scrollPosition": 1103,
+    "expected": "how visible",
+    "observed": "ВОЗМОЖНОСТИ\nВсё необходимое\nдля следующего шага\n\nОт первого интереса до участия и подтверждённого результата.\n\n⌕\n01\nВозможности рядом\n\nМероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.\n\n▤\n02\nЛичное портфолио\n\nСобирайте подтверждённые достижения и отслеживайте свой образовательный путь.\n\n↔\n03\nПартнёрства\n\nНаходите организации и создавайте совместные образовательные инициативы.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-desktop-how.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "#partners",
+    "scrollContainer": "document",
+    "scrollPosition": 1299,
+    "expected": "partners visible",
+    "observed": "СОТРУДНИЧЕСТВО\nСоздавайте возможности вместе\n\nУчреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.\n\nСтать частью TalentHub\n→\n⌂\nОбразовательные учреждения\nШколы и организации\n↔\n▦\nКомпании и академии\nПартнёры и инициативы",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-desktop-partners.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/auth",
+    "expected": "same-origin /auth",
+    "observed": "http://localhost:8080/auth",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/school",
+    "expected": "same-origin /school",
+    "observed": "http://localhost:8080/school",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/company",
+    "expected": "same-origin /company",
+    "observed": "http://localhost:8080/company",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 1280,
+      "height": 1800
+    },
+    "trigger": "/parent",
+    "expected": "same-origin /parent",
+    "observed": "http://localhost:8080/parent",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#platform",
+    "scrollContainer": "document",
+    "scrollPosition": 782,
+    "expected": "platform visible",
+    "observed": "TALENTHUB / ЭКОСИСТЕМА\nОт интереса — к реальным достижениям\n\nВозможности для учащихся и инструменты для организаций собраны в одной экосистеме. Находите события, подавайте заявки, сохраняйте результаты и выстраивайте сотрудничество в единой среде.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-phone-platform.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#how",
+    "scrollContainer": "document",
+    "scrollPosition": 1053,
+    "expected": "how visible",
+    "observed": "ВОЗМОЖНОСТИ\nВсё необходимое\nдля следующего шага\n\nОт первого интереса до участия и подтверждённого результата.\n\n⌕\n01\nВозможности рядом\n\nМероприятия, олимпиады, конкурсы и образовательные программы в одном каталоге.\n\n▤\n02\nЛичное портфолио\n\nСобирайте подтверждённые достижения и отслеживайте свой образовательный путь.\n\n↔\n03\nПартнёрства\n\nНаходите организации и создавайте совместные образовательные инициативы.",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-phone-how.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "#partners",
+    "scrollContainer": "document",
+    "scrollPosition": 2067,
+    "expected": "partners visible",
+    "observed": "СОТРУДНИЧЕСТВО\nСоздавайте возможности вместе\n\nУчреждения могут находить компании и академии для совместных проектов. Партнёры, в свою очередь, могут предлагать образовательные инициативы и находить заинтересованные учреждения.\n\nСтать частью TalentHub\n→\n⌂\nОбразовательные учреждения\nШколы и организации\n↔\n▦\nКомпании и академии\nПартнёры и инициативы",
+    "status": "passed",
+    "screenshot": "/tmp/browser/talenthub/preview-phone-partners.png"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/auth",
+    "expected": "same-origin /auth",
+    "observed": "http://localhost:8080/auth",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/school",
+    "expected": "same-origin /school",
+    "observed": "http://localhost:8080/school",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/company",
+    "expected": "same-origin /company",
+    "observed": "http://localhost:8080/company",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  },
+  {
+    "site": "preview",
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "trigger": "/parent",
+    "expected": "same-origin /parent",
+    "observed": "http://localhost:8080/parent",
+    "status": "passed",
+    "note": "Destination page outside requested single-page import"
+  }
+]
